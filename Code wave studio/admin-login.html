@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login - Code Wave Studio</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0047ab; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; }
+    .login-container { background:#005ecc; padding:40px; border-radius:12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); width:300px; }
+    input { width:100%; padding:10px; margin:10px 0; border-radius:6px; border:none; }
+    button { width:100%; padding:10px; background:#ff6f61; border:none; border-radius:6px; color:#fff; font-weight:bold; cursor:pointer; }
+    button:hover { background:#ff4a3a; }
+    .error { color:#ffb3b3; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <input type="text" id="username" placeholder="Username" autocomplete="off" />
+    <input type="password" id="password" placeholder="Password" autocomplete="off" />
+    <button onclick="login()">Login</button>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const errorDiv = document.getElementById('error');
+
+      // Set your admin username and password here:
+      const adminUser = "admin";
+      const adminPass = "codewave123";
+
+      if(user === adminUser && pass === adminPass) {
+        // Redirect to admin dashboard page (create this page separately)
+        window.location.href = "admin-dashboard.html";
+      } else {
+        errorDiv.textContent = "Invalid username or password!";
+      }
+    }
+  </script>
+</body>
+</html>
